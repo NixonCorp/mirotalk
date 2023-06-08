@@ -1,5 +1,6 @@
 # git folder
 .git
+.history
 
 # npm
 node_modules

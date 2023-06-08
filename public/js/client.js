@@ -136,13 +136,13 @@ const buttons = {
         showVideoBtn: true,
         showScreenBtn: true,
         showRecordStreamBtn: true,
-        showChatRoomBtn: true,
-        showCaptionRoomBtn: true,
+        showChatRoomBtn: false,
+        showCaptionRoomBtn: false,
         showMyHandBtn: true,
-        showWhiteboardBtn: true,
+        showWhiteboardBtn: false,
         showFileShareBtn: true,
         showMySettingsBtn: true,
-        showAboutBtn: true, // Please keep me always true, Thank you!
+        showAboutBtn: false, // Please keep me always true, Thank you!
     },
     chat: {
         showMaxBtn: true,
@@ -2121,9 +2121,9 @@ async function setupLocalMedia() {
     } catch (err) {
         console.error('[Error] - Access denied for audio - video device', err);
         playSound('alert');
-        openURL(
-            `/permission?roomId=${roomId}&getUserMediaError=${err.toString()} <br/> Check the common getusermedia errors <a href="https://blog.addpipe.com/common-getusermedia-errors" target="_blank">here<a/>`,
-        );
+        // openURL(
+        //     `/permission?roomId=${roomId}&getUserMediaError=${err.toString()} <br/> Check the common getusermedia errors <a href="https://blog.addpipe.com/common-getusermedia-errors" target="_blank">here<a/>`,
+        // );
     }
 } // end [setup_local_stream]
 
@@ -8285,6 +8285,7 @@ function getName(name) {
  * @param {boolean} yes true/false
  */
 function elemDisplay(elem, yes) {
+    if(!elem) return
     elem.style.display = yes ? 'inline' : 'none';
 }
 
