@@ -62,7 +62,7 @@ const log = new Logs('server');
 
 const domain = process.env.HOST || 'localhost';
 const isHttps = process.env.HTTPS == 'true';
-const port = process.env.PORT || 3000; // must be the same to client.js signalingServerPort
+const port = process.env.PORT || 80; // must be the same to client.js signalingServerPort
 const host = `http${isHttps ? 's' : ''}://${domain}:${port}`;
 
 let io, server, authHost;
