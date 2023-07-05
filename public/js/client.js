@@ -1025,7 +1025,7 @@ function handleServerInfo(config) {
     }
 
     if (notify && peers_count == 1) {
-        shareRoomMeetingURL(true);
+       // shareRoomMeetingURL(true);
     } else {
         checkShareScreen();
     }
@@ -1163,13 +1163,13 @@ async function whoAreYou() {
         allowOutsideClick: false,
         allowEscapeKey: false,
         background: swalBackground,
-        title: 'MiroTalk P2P',
+       
         position: 'center',
         input: 'text',
-        inputPlaceholder: 'Enter your name',
+        inputPlaceholder: 'Введите имя',
         inputValue: window.localStorage.peer_name ? window.localStorage.peer_name : '',
         html: initUser, // inject html
-        confirmButtonText: `Join meeting`,
+        confirmButtonText: `Продолжить`,
         showClass: {
             popup: 'animate__animated animate__fadeInDown',
         },
@@ -3286,7 +3286,7 @@ function manageLeftButtons() {
  */
 function setShareRoomBtn() {
     shareRoomBtn.addEventListener('click', async (e) => {
-        shareRoomUrl();
+       // shareRoomUrl();
     });
 }
 
@@ -4336,10 +4336,10 @@ async function shareRoomUrl() {
             */
             console.error('Navigator share error', err);
 
-            shareRoomMeetingURL();
+           // shareRoomMeetingURL();
         }
     } else {
-        shareRoomMeetingURL();
+       // shareRoomMeetingURL();
     }
 }
 
