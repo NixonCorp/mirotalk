@@ -130,8 +130,8 @@ const lsSettings = localStorageSettings
 // Show desired buttons captionBtn, showSwapCameraBtn, showScreenShareBtn, showFullScreenBtn -> (auto-detected)
 const buttons = {
     main: {
-        showShareRoomBtn: true,
-        showHideMeBtn: true,
+        showShareRoomBtn: false,
+        showHideMeBtn: false,
         showAudioBtn: true,
         showVideoBtn: true,
         showScreenBtn: true,
@@ -140,7 +140,7 @@ const buttons = {
         showCaptionRoomBtn: false,
         showMyHandBtn: true,
         showWhiteboardBtn: false,
-        showFileShareBtn: true,
+        showFileShareBtn: false,
         showMySettingsBtn: true,
         showAboutBtn: false, // Please keep me always true, Thank you!
     },
@@ -171,16 +171,17 @@ const buttons = {
         audioBtnClickAllowed: true,
         videoBtnClickAllowed: true,
         showKickOutBtn: true,
-        showSnapShotBtn: true,
+        showSnapShotBtn: false,
         showFileShareBtn: true,
         showShareVideoAudioBtn: true,
         showPrivateMessageBtn: true,
-        showZoomInOutBtn: true,
+        showZoomInOutBtn: false,
     },
     local: {
-        showSnapShotBtn: true,
-        showVideoCircleBtn: true,
-        showZoomInOutBtn: true,
+        showSnapShotBtn: false,
+        showVideoCircleBtn: false,
+        showZoomInOutBtn: false,
+        showPinBtn: false
     },
 };
 
@@ -2231,7 +2232,7 @@ async function loadLocalMedia(stream) {
     // attach to video nav bar
     myVideoNavBar.appendChild(myCountTime);
 
-    if (!isMobileDevice) {
+    if (!isMobileDevice && buttons.local.showPinBtn) {
         myVideoNavBar.appendChild(myVideoPinBtn);
     }
 
